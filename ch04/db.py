@@ -54,11 +54,11 @@ dal = DataAccessLayer()
 
 def prep_db():
     ins = dal.cookies.insert()
-    dal.connection.execute(ins, cookie_name='dark chocolate chip',
-            cookie_recipe_url='http://some.aweso.me/cookie/recipe_dark.html',
-            cookie_sku='CC02',
-            quantity='1',
-            unit_cost='0.75')
+    dal.connection.execute(ins, parameters={'cookie_name':'dark chocolate chip',
+            'cookie_recipe_url':'http://some.aweso.me/cookie/recipe_dark.html',
+            'cookie_sku':'CC02',
+            'quantity':'1',
+            'unit_cost':'0.75'})
     inventory_list = [
         {
             'cookie_name': 'peanut butter',
